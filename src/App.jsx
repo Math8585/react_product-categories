@@ -121,7 +121,7 @@ export const App = () => {
                   type="text"
                   className="input"
                   placeholder="Search"
-                  onChange={event => setQuery(event.target.value)}
+                  onChange={(event) => setQuery(event.target.value)}
                   value={query}
                 />
 
@@ -131,11 +131,14 @@ export const App = () => {
 
                 <span className="icon is-right">
                   {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-                  <button
-                    data-cy="ClearButton"
-                    type="button"
-                    className="delete"
-                  />
+                  {query && (
+                    <button
+                      data-cy="ClearButton"
+                      type="button"
+                      className="delete"
+                      onClick={() => setQuery('')}
+                    />
+                  )}
                 </span>
               </p>
             </div>
