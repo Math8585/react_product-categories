@@ -121,7 +121,7 @@ export const App = () => {
                   type="text"
                   className="input"
                   placeholder="Search"
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={event => setQuery(event.target.value)}
                   value={query}
                 />
 
@@ -181,6 +181,10 @@ export const App = () => {
                 data-cy="ResetAllButton"
                 href="#/"
                 className="button is-link is-outlined is-fullwidth"
+                onClick={() => {
+                  setQuery('');
+                  setName('all');
+                }}
               >
                 Reset all filters
               </a>
